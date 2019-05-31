@@ -16,6 +16,7 @@ export default class ChatForm extends Vue {
 
   submit() {
     this.$emit("submit", this.message);
+    this.message.body = "";
   }
 }
 </script>
