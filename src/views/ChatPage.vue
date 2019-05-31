@@ -6,16 +6,21 @@
 import { Component, Vue } from "vue-property-decorator";
 import { mapState } from "vuex";
 import ChatTemplate from "./ChatTemplate.vue";
+import { Message } from '../api/message-api';
 
 @Component({
   components: {
     ChatTemplate
   },
   computed: mapState({
-    messages: state => state.messages
+    messages: (state: { messages: Message[] }) => state.messages
   })
 })
-export default class ChatPage extends Vue {}
+export default class ChatPage extends Vue {
+  created() {
+    this.$store.dispatch("initMessages");
+  }
+}
 </script>
 
 <style>
