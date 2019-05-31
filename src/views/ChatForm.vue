@@ -14,8 +14,8 @@ export default class ChatForm extends Vue {
     body: ""
   }
 
-  submit() {
-    this.$emit("submit", this.message);
+  async submit() {
+    await this.$emit("submit", this.message);
     this.message.body = "";
   }
 }

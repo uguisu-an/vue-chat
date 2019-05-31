@@ -23,7 +23,7 @@ import ChatForm from "./ChatForm.vue";
 export default class ChatTemplate extends Vue {
   @Prop({ default: () => [] }) messages!: any[];
 
-  add(message: any) {
+  async add(message: any) {
     this.$emit("add", message);
   }
 }

@@ -11,6 +11,9 @@ export default new Vuex.Store({
   mutations: {
     setMessages(state, messages) {
       state.messages = messages;
+    },
+    addMessage(state, message) {
+      state.messages.push(message);
     }
   },
   actions: {
@@ -19,7 +22,8 @@ export default new Vuex.Store({
       commit("setMessages", messages);
     },
     async sendMessage({ commit }, message) {
-      await sendMessage(message);
+      const newMessage = await sendMessage(message);
+      commit("addMessage", newMessage);
     }
   }
 });

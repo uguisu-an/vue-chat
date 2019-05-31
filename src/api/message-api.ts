@@ -1,7 +1,6 @@
 import axios from "axios";
 
 export interface MessageInput {
-  id?: number;
   body: string;
 }
 
