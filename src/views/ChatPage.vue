@@ -1,5 +1,5 @@
 <template>
-  <ChatTemplate :messages="messages" />
+  <ChatTemplate :messages="messages" @add="addMessage" />
 </template>
 
 <script lang="ts">
@@ -19,6 +19,10 @@ import { Message } from '../api/message-api';
 export default class ChatPage extends Vue {
   created() {
     this.$store.dispatch("initMessages");
+  }
+
+  addMessage(message: any) {
+    this.$store.dispatch("sendMessage", message);
   }
 }
 </script>

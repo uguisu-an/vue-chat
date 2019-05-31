@@ -1,12 +1,22 @@
 <template>
-  <form action="#">
-    <textarea name="body" class="form-control" rows="4"></textarea>
+  <form @submit.prevent="submit">
+    <textarea name="body" class="form-control" rows="4" v-model="message.body"></textarea>
+    <button class="btn btn-primary btn-sm">Send</button>
   </form>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { Component, Vue } from "vue-property-decorator";
 
+@Component({})
+export default class ChatForm extends Vue {
+  message = {
+    body: ""
+  }
+
+  submit() {
+    this.$emit("submit", this.message);
+  }
 }
 </script>
 

@@ -5,7 +5,7 @@
         <ChatMessage :message="message" />
       </li>
     </ul>
-    <ChatForm />
+    <ChatForm @submit="add" />
   </div>
 </template>
 
@@ -22,6 +22,10 @@ import ChatForm from "./ChatForm.vue";
 })
 export default class ChatTemplate extends Vue {
   @Prop({ default: () => [] }) messages!: any[];
+
+  add(message: any) {
+    this.$emit("add", message);
+  }
 }
 </script>
 

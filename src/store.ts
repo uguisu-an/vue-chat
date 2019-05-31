@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import { getAllMessages, Message } from "./api/message-api";
+import { getAllMessages, Message, sendMessage } from "./api/message-api";
 
 Vue.use(Vuex);
 
@@ -17,6 +17,9 @@ export default new Vuex.Store({
     async initMessages({ commit }) {
       const messages = await getAllMessages();
       commit("setMessages", messages);
+    },
+    async sendMessage({ commit }, message) {
+      await sendMessage(message);
     }
   }
 });
