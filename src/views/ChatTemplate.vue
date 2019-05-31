@@ -21,7 +21,7 @@ import ChatForm from "./ChatForm.vue";
   }
 })
 export default class ChatTemplate extends Vue {
-  @Prop({ default: [] }) messages!: any[];
+  @Prop({ default: () => [] }) messages!: any[];
 }
 </script>
 
