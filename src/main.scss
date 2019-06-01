@@ -1,0 +1,30 @@
+// $theme-colors: (
+//   "primary": #f84c38
+// );
+
+$input-border-radius: 0;
+$input-border-radius-sm: 0;
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+.form-sm {
+  .form-group {
+    margin-bottom: 0.5rem;
+  }
+  .form-control {
+    @extend .form-control-sm;
+  }
+  textarea.form-control {
+    height: unset;
+  }
+  .form-btn-group {
+    @extend .d-flex;
+    @extend .flex-row-reverse;
+    .btn {
+      @extend .ml-2;
+    }
+  }
+  .btn {
+    @extend .btn-sm;
+  }
+}
