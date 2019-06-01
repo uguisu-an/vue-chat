@@ -1,0 +1,20 @@
+// $theme-colors: (
+//   "primary": #f84c38
+// );
+
+$input-border-radius: 0;
+$input-border-radius-sm: 0;
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+.form-sm {
+  .form-group {
+    margin-bottom: 0.5rem;
+  }
+  .form-control {
+    @extend .form-control-sm;
+  }
+  .btn {
+    @extend .btn-sm;
+  }
+}
