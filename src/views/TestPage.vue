@@ -8,7 +8,7 @@
         <input type="text" class="form-control" />
       </div>
       <div class="form-group">
-        <input type="text" class="form-control" />
+        <textarea class="form-control" rows="3"></textarea>
       </div>
       <div class="form-btn-group">
         <button class="btn btn-primary">Send</button>
